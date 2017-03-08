@@ -7,5 +7,17 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/lib/poi-3.16-beta2" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="file://$MODULE_DIR$/lib/poi-3.16-beta2/docs/apidocs" />
+        </JAVADOC>
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/lib/poi-3.16-beta2" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>
