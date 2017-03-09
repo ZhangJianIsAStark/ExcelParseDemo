@@ -10,9 +10,8 @@ public class MainEntrance {
 
         excelParseTool.setFilePath("/home/zhangjian/Desktop/all_apn_together.xlsx");
 
-        Workbook workbook;
         try {
-            workbook = excelParseTool.initWorkBook();
+            Workbook workbook = excelParseTool.initWorkBook();
 
             List<ApnModel> outData = new ArrayList<>();
 
