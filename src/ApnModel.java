@@ -15,6 +15,8 @@ class ApnModel {
     private String mMmsport;
     private String mAuthtype;
     private String mType;
+    private String mMvnoType;
+    private String mMvnoMatchData;
 
     public String getMcc() {
         return mMcc;
@@ -128,6 +130,22 @@ class ApnModel {
         mType = type;
     }
 
+    public String getMvnoType() {
+        return mMvnoType;
+    }
+
+    public void setMvnoType(String mMvnoType) {
+        this.mMvnoType = mMvnoType;
+    }
+
+    public String getMvnoMatchData() {
+        return mMvnoMatchData;
+    }
+
+    public void setMvnoMatchData(String mMvnoMatchData) {
+        this.mMvnoMatchData = mMvnoMatchData;
+    }
+
     @Override
     public boolean equals(Object object) {
         return (this == object) ||
@@ -145,7 +163,9 @@ class ApnModel {
                         && equals(mMmsproxy, ((ApnModel) object).mMmsproxy)
                         && equals(mMmsport, ((ApnModel) object).mMmsport)
                         && equals(mAuthtype, ((ApnModel) object).mAuthtype)
-                        && equals(mType, ((ApnModel) object).mType));
+                        && equals(mType, ((ApnModel) object).mType))
+                        && equals(mMvnoType, ((ApnModel) object).getMvnoType())
+                        && equals(mMvnoMatchData, ((ApnModel) object).getMvnoMatchData());
     }
 
     private boolean equals(String s1, String s2) {

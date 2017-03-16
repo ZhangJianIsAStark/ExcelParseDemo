@@ -77,6 +77,12 @@ public class ApnWriteTool {
                 if (validString(apnModel.getType()))
                     writeLine(out, FOUR_SPACE + "type=" + SEP_CHAR + apnModel.getType() + SEP_CHAR);
 
+                //In fact, it may need to change here, my apn-excel only have spn type
+                if (validString(apnModel.getMvnoMatchData())) {
+                    writeLine(out, FOUR_SPACE + "mvno_type=" + SEP_CHAR + "spn" + SEP_CHAR);
+                    writeLine(out, FOUR_SPACE + "mvno_match_data=" + SEP_CHAR + apnModel.getMvnoMatchData() + SEP_CHAR);
+                }
+
                 writeLine(out, DOUBLE_SPACE + "/>");
                 writeLine(out, "");
             }
