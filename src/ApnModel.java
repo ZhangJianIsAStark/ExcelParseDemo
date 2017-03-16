@@ -1,3 +1,5 @@
+import java.util.Comparator;
+
 class ApnModel {
     private String mMcc;
     private String mMnc;
@@ -124,5 +126,35 @@ class ApnModel {
 
     public void setType(String type) {
         mType = type;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        return (this == object) ||
+                ((object instanceof ApnModel)
+                        && equals(mMcc, ((ApnModel) object).mMcc)
+                        && equals(mMnc, ((ApnModel) object).mMnc)
+                        && equals(mCarrier, ((ApnModel) object).mCarrier)
+                        && equals(mApn, ((ApnModel) object).mApn)
+                        && equals(mUser, ((ApnModel) object).mUser)
+                        && equals(mPassword, ((ApnModel) object).mPassword)
+                        && equals(mProxy, ((ApnModel) object).mProxy)
+                        && equals(mProtocol, ((ApnModel) object).mProtocol)
+                        && equals(mPort, ((ApnModel) object).mPort)
+                        && equals(mMmsc, ((ApnModel) object).mMmsc)
+                        && equals(mMmsproxy, ((ApnModel) object).mMmsproxy)
+                        && equals(mMmsport, ((ApnModel) object).mMmsport)
+                        && equals(mAuthtype, ((ApnModel) object).mAuthtype)
+                        && equals(mType, ((ApnModel) object).mType));
+    }
+
+    private boolean equals(String s1, String s2) {
+        return (s1 == null && s2 == null)
+                || ((s1 != null) && s1.equals(s2));
+    }
+
+    @Override
+    public String toString() {
+        return mCarrier + "\t" + mMcc + "\t" + mMnc;
     }
 }

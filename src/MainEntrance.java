@@ -1,3 +1,4 @@
+import org.apache.commons.collections4.list.TreeList;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import java.io.IOException;
@@ -19,8 +20,19 @@ public class MainEntrance {
                 excelParseTool.parseWorkbook(workbook, outData);
             }
 
-            if (outData.size() > 0) {
-                new ApnWriteTool().write("/home/zhangjian/Desktop/apns-conf.xml", outData);
+            List<ApnModel> unique = new ArrayList<>();
+
+            for (ApnModel apnModel : outData) {
+                if (!unique.contains(apnModel)) {
+                    unique.add(apnModel);
+                } else {
+                    System.out.println(apnModel.toString());
+                }
+            }
+
+            if (unique.size() > 0) {
+                System.out.println("size: " + unique.size());
+                new ApnWriteTool().write("/home/zhangjian/Desktop/apns-conf.xml", unique);
             }
         } catch (IOException e) {
             System.out.println(e.toString());
